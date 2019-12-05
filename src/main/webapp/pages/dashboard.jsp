@@ -3,19 +3,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Bootstrap example</title>
-<link href="webjars/bootstrap/4.3.1/css/bootstrap.min.css"
-	    		rel="stylesheet">
-	    		
+	<meta charset="ISO-8859-1">
+	<title></title>
+	
+	<link href="webjars/bootstrap/4.3.1/css/bootstrap.min.css"
+		    		rel="stylesheet">    	
 </head>
 <body>
 <!-- This is my example bootstrap page -->
- hello
+ <button type="button">Click Me</button>
  
  <script src="webjars/jquery/3.4.1/jquery.min.js"></script>
-	    <script src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	    
+	    <script src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>   
 </body>
 </html>
 
