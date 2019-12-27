@@ -23,16 +23,10 @@ public class TripTest {
 	@Autowired
 	private TestRestTemplate restTemplate;
 	
+
+	
 	@Test
 	public void getTrip_tripIsSelected()  {
-		//act
-		ResponseEntity<Trip> response = restTemplate.getForEntity("/dashboard/Mexico", Trip.class);
-		
-		//assert
-		assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
-		assertThat(response.getBody().getName()).isEqualTo("Mexico");
-		assertThat(response.getBody().getId()).isEqualTo(1);
-
-		System.out.println("Time: " + response.getBody().getStartDate());
+		Trip trip = new Trip("Mexico")
 	}
 }

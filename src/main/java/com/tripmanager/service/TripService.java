@@ -6,34 +6,65 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.tripmanager.TripNotFoundException;
-import com.tripmanager.dao.TripRepository;
+import com.tripmanager.dao.TripDAO;
 import com.tripmanager.model.Trip;
 
 @Component
 public class TripService {
 	
-	private TripRepository tripRepository;
-	
-	public TripService(TripRepository tripRepository) {
-		// TODO Auto-generated constructor stub
-		this.tripRepository = tripRepository;
-	}
+	@Autowired
+	private TripDAO tripdao;
 
+	/**
+	 * All trip information
+	 * @return
+	 */
 	public Iterable<Trip> getAllTrips() {
-		return  tripRepository.findAll();
+		return  tripdao.findAll();
 	}
 
+	/**
+	 * Find a trip by name
+	 * @param name
+	 * @return
+	 */
 	public Trip getTrip(String name) {
-		Trip trip = tripRepository.findByName(name);
+		Trip trip = tripdao.findByName(name);
 		if(trip == null) {
 			throw new TripNotFoundException();
 		}
 		return trip;
 	}
-
-	public boolean save(Trip trip) {
-		// TODO Auto-generated method stub
-		return false;
+	
+	/**
+	 * Find a trip by id
+	 * @param id
+	 * @return
+	 */
+	public Trip getTrip(int id) {
+		Trip trip;
+		try {
+			trip = tripdao.findById(id);
+		} catch(Exception e) {
+			return null;
+		}
+		return trip;
 	}
 
+	/**
+	 * Add a trip to database
+	 * @param trip
+	 */
+	public void addTrip(Trip trip) {
+		tripdao.save(trip);
+	}
+	
+	/**
+	 * Deletes a trip based on id
+	 * @param id
+	 */
+	public void deleteTrip(int id) {
+		tripdao.deleteById(id);
+		//TODO: Should delete all relative trip events
+	}
 }

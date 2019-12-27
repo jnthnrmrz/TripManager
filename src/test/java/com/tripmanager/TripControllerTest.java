@@ -76,6 +76,15 @@ public class TripControllerTest {
 	public void addTrip_userPutsTripInfo_tripIsAdded() throws Exception {
 		when(tripService.save(new Trip("Mexico"))).thenReturn(false);
 		
+		mockMvc.perform(MockMvcRequestBuilders.post("/dashboard"))
+				.andExpect(status().isOk())
+				.andExpect(jsonPath("name", is("Mexico")));
+	}
+	
+	@Test
+	public void updateTrip_userChoosesTrip_tripIsAdded() throws Exception {
+		when(tripService.save(new Trip("Mexico"))).thenReturn(false);
+		
 		mockMvc.perform(MockMvcRequestBuilders.put("/dashboard"))
 				.andExpect(status().isOk())
 				.andExpect(jsonPath("name", is("Mexico")));

@@ -23,24 +23,27 @@ public class Trip {
 	private LocalDate endDate;
 	@Column(name="location")
 	private String location;
-	
+	@Column(name="description")
+	private String description;
+
 	public Trip() {
 	}
 	
 	public Trip(String name) {
-		this(name, LocalDate.now(), LocalDate.now().plusDays(7), null);
+		this(name, LocalDate.now(), LocalDate.now().plusDays(7), null, null);
 	}
 	public Trip(String name, String startDate, String endDate) {
-		this(name, LocalDate.parse(startDate), LocalDate.parse(endDate), null);
+		this(name, LocalDate.parse(startDate), LocalDate.parse(endDate), null, null);
 	}
 	public Trip(String name, String startDate, String endDate, String location) {
-		this(name, LocalDate.parse(startDate), LocalDate.parse(endDate), location);
+		this(name, LocalDate.parse(startDate), LocalDate.parse(endDate), location, null);
 	}
-	public Trip(String name, LocalDate startDate, LocalDate endDate, String location) {
+	public Trip(String name, LocalDate startDate, LocalDate endDate, String location, String description) {
 		this.name = name;
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.location = location;
+		this.description = description;
 	}
 	
 	
@@ -73,6 +76,12 @@ public class Trip {
 	}
 	public void setLocation(String location) {
 		this.location = location;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 }

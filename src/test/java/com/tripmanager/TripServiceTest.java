@@ -42,4 +42,29 @@ public class TripServiceTest {
 		tripService.getTrip("Mexico");
 		
 	}
+	
+	@Test
+	public void addTrip_tripInformationIsReceived_tripAdded() throws Exception {
+		Trip trip = new Trip("Mexico");
+		when(tripRepository.save(trip)).thenReturn(trip);
+		tripService.addTrip(trip);
+		
+	}
+	
+	@Test(expected=Exception.class)
+	public void addTrip_tripInformationIsReceived_notAdded() throws Exception {
+		Trip trip = new Trip("Mexico");
+		when(tripRepository.save(Mockito.any(Trip.class))).thenThrow(Exception.class);
+		tripService.addTrip(trip);
+		
+		
+	}
+	
+	@Test
+	public void updateTrip_tripInformationIsReceived_tripAdded() throws Exception {
+		Trip trip = new Trip("Mexico");
+		when(tripRepository.save(trip)).thenReturn(trip);
+		tripService.addTrip(trip);
+		
+	}
 }

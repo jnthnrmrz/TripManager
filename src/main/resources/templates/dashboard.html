@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Dashboard</title>
+	
+	<link href="webjars/bootstrap/4.3.1/css/bootstrap.min.css"
+		    		rel="stylesheet">    	
+</head>
+<body>
+	<div class="d-flex flex-row justify-content-between align-items-center bg-info text-white p-1 mb-2">
+			<h1>UserName</h1>
+			<h1></h1>
+			<button type="button" class="btn btn-primary btn-sm">Login</button>
+	</div>
+	
+	<div class="card-group text-center">
+		<div class="card bg-light mb-3" style="max-width: 18rem;" th:each="trip : ${trips}">
+			<div class="card-header" th:text="${trip.name}">
+				<h6 th:text="${trip.name}"></h1>
+			</div>
+			<div class= "card-body">
+				<h6 class="card-title" th:text="${trip.location}">Whoops</h6>
+				<p class="font-weight-light font-italic text-muted" th:text="${trip.startDate} + '/' + ${trip.endDate}">No Date</p>
+				<p class="card-text" th:text="${trip.description}">No description</p>
+			</div>
+			<div class="card-footer">
+				<div class="row">
+					<div class="col-md-6">
+						<button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editModal">Edit Trip</button>
+					</div>
+					<div class="col-md-6">
+						<a th:href="@{'/dashboard/trip'+${trip.id}}" class="btn btn-info btn-sm">View Trip</a>
+					</div>
+			 	</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="d-flex flex-row justify-content-center align-items-center mb-2">
+		<button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#addModal">Add Trip</button>
+	</div>
+
+
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModelLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<form method="POST" class="needs-validation" novalidate th:object="${trip}"  th:action="@{/dashboard}">
+		    	<div class="modal-header">
+			        <h5 class="modal-title" id="exampleModalLabel">Trip </h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			    </div>
+			    <div class="modal-body">
+			    		<div class="form-group">
+			    			<label for="tripNameInput">Name</label>
+							<input type="text" class="form-control" id="tripNameInput" placeholder="Enter trip name" th:field="*{name}" required></input>
+							<div class="invalid-feedback">Please provide a name</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<label for="tripStartDate">Start Date</label>
+								<input type="text" class="form-control" id="tripStartDate" th:field="*{startDate}" required>
+								<div class="invalid-feedback">Please provide a start date</div>
+							</div>
+							<div class="form-group col-md-6">
+								<label for="tripEndDate">End Date</label>
+								<input type="text" class="form-control" id="tripEndtDate" th:field="*{endDate}" required>
+								<div class="invalid-feedback">Please provide an end date</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="tripLocation">Location</label>
+							<input type="text" class="form-control" id="tripLocation" placeholder="Enter trip location" th:field="*{location}">
+						</div>
+						<div class="form-group">
+							<label for="tripDescription">Description</label>
+							<textarea class="form-control" id="tripDescription" placeholder="Enter trip description" rows="3" th:field="*{description}"></textarea>
+						</div>
+			    </div>
+				<div class="modal-footer">
+		        	<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        	<button type="submit" class="btn btn-primary">Save changes</button>
+		      	</div>
+			</form>
+	    </div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<form method="PUT" class="needs-validation" novalidate th:object="${tripEdit}"  th:action="@{/dashboard}">
+		    	<div class="modal-header">
+			        <h5 class="modal-title" id="exampleModalLabel">Edit Trip </h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			    </div>
+			    <div class="modal-body">
+			    		<div class="form-group">
+			    			<label for="tripNameInput">Name</label>
+							<input type="text" class="form-control" id="tripNameInput" placeholder="Enter trip name" th:field="*{name}" required></input>
+							<div class="invalid-feedback">Please provide a name</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<label for="tripStartDate">Start Date</label>
+								<input type="text" class="form-control" id="tripStartDate" th:field="*{startDate}" required>
+								<div class="invalid-feedback">Please provide a start date</div>
+							</div>
+							<div class="form-group col-md-6">
+								<label for="tripEndDate">End Date</label>
+								<input type="text" class="form-control" id="tripEndtDate" th:field="*{endDate}" required>
+								<div class="invalid-feedback">Please provide an end date</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="tripLocation">Location</label>
+							<input type="text" class="form-control" id="tripLocation" placeholder="Enter trip location" th:field="*{location}">
+						</div>
+						<div class="form-group">
+							<label for="tripDescription">Description</label>
+							<textarea class="form-control" id="tripDescription" placeholder="Enter trip description" rows="3" th:field="*{description}"></textarea>
+						</div>
+			    </div>
+				<div class="modal-footer">
+		        	<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        	<button type="submit" class="btn btn-primary">Save changes</button>
+		      	</div>
+			</form>
+	    </div>
+	</div>
+</div>
+
+	<script>
+		$('#myModal').on('shown.bs.modal', function () {
+		  $('#myInput').trigger('focus')
+	})	</script>
+<script>
+	// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+	</script>
+	<script src="webjars/jquery/3.4.1/jquery.min.js"></script>
+	<script src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>   
+</body>
+</html>
+
+<!--  You might need to add this to the servlet.xml file whenever that is made
+<mvc:resources mapping="/webjars/**" location="/webjars/"/>
+-->
+<!-- Javascript at end of body and css at head -->

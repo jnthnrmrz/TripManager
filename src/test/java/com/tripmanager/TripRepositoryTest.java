@@ -2,6 +2,8 @@ package com.tripmanager;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.assertj.core.api.Assertions;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,4 +34,29 @@ public class TripRepositoryTest {
 		
 		assertThat(trip.getName()).isEqualTo(savedTrip.getName());
 	}
+	
+	@Test
+	public void save_tripAdded_saveTrip() throws Exception  {
+		Trip check = new Trip("Canada");
+		check = entityManager.persistFlushFind(check);
+		assertThat(tripRepository.findById(check.getId()).get()).isEqualTo(check);	
+	}
+	
+	/**
+	 * This is because database only accepts unique trip names
+	 * @throws Exception
+	 */
+	@Test(expected=Exception.class)
+	public void save_tripAdded_saveTripFailed() throws Exception  {
+		Trip check = new Trip("Mexico"); 
+		check = entityManager.persistFlushFind(check);
+		assertThat(tripRepository.findById(check.getId()).get()).isEqualTo(check);
+	}
+	
+	@Test
+	public void delete_tripIsForDeletion_tripDeletionSuccessful() {
+		Trip check = new Trip("Spain");
+		check = entityManager.persistFlushFind(check);
+		assertThat(tripRepository.delete(tripRepository.findByName("Spain"));
+	
 }
