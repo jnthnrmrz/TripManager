@@ -40,6 +40,11 @@ public class TripController {
 		return "dashboard.html";
 	}
 	
+	@RequestMapping("/login")
+	public String login() {
+		return "login.html";
+	}
+	
 	@PostMapping("/dashboard")
 	public String addTrip(@Valid Trip trip, BindingResult bindingResult) {
 		if(bindingResult.hasErrors()) {
@@ -59,9 +64,10 @@ public class TripController {
 		return "redirect:/dashboard";
 	}
 	
-	@DeleteMapping("/dashboard")
-	public String deleteTrip(@RequestParam("id") int id, Trip trip) {
-		tripService.deleteTrip(id);
+	@RequestMapping("/deleteTrip/{id}")
+	public String deleteTrip(@PathVariable String id, Trip trip) {
+		int ids = Integer.parseInt(id);
+		tripService.deleteTrip(ids);
 		return "redirect:/dashboard";
 	}
 	
