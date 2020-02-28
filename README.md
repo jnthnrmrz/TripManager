@@ -3,8 +3,7 @@
 The trip manager helps keep the plans of a trip in a nice organized format. 
 The user will be able to choose the time of the trip and how long it will take along with a name and a budget. 
 The user can then click on each week’s day and view a particular day. It will be able to get the events from google places and drag it to the trip board. 
-Once on the board the user can assign a budget limit and date. 
-The trip manager will also be able to have an overall budget and tell what percentage of the budget is being used and on what.
+Once on the board the user can assign a date adn any more info. 
 </div>
 
 ## Web Design (Work in progress):
