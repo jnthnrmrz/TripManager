@@ -2,7 +2,7 @@
 The trip manager helps keep the plans of a trip in a nice organized format. 
 The user will be able to choose the time of the trip and how long it will take along with a name and a budget. 
 The user can then click on each week’s day and view a particular day. It will be able to get the events from google places and drag it to the trip board. 
-Once on the board the user can assign a date adn any more info. 
+Once on the board the user can assign a date and any more info. 
 ## Web Design (Work in progress):
 ![Login Page](https://github.com/jnthnrmrz/TripManager/blob/master/Trip%20Project%20Design%20Stuff/Login%20Page.png)  
 ![Account Creation](https://github.com/jnthnrmrz/TripManager/blob/master/Trip%20Project%20Design%20Stuff/Account%20Creation.png)
