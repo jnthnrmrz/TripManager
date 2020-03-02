@@ -1,4 +1,30 @@
 -------------------------------------------------------------------------------
 Test set: com.tripmanager.TripControllerTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.528 s - in com.tripmanager.TripControllerTest
+Tests run: 5, Failures: 3, Errors: 2, Skipped: 0, Time elapsed: 5.751 s <<< FAILURE! - in com.tripmanager.TripControllerTest
+getTrip_userTripIsClicked_tripIsFound  Time elapsed: 0.182 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<401>
+	at com.tripmanager.TripControllerTest.getTrip_userTripIsClicked_tripIsFound(TripControllerTest.java:62)
+
+getTrip_userTripIsClicked_tripIsNotFound  Time elapsed: 0.012 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<404> but was:<401>
+	at com.tripmanager.TripControllerTest.getTrip_userTripIsClicked_tripIsNotFound(TripControllerTest.java:71)
+
+getAllTrips_userTripsIsDisplayed_returnAllTrips  Time elapsed: 0.01 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<401>
+	at com.tripmanager.TripControllerTest.getAllTrips_userTripsIsDisplayed_returnAllTrips(TripControllerTest.java:51)
+
+addTrip_userPutsTripInfo_tripIsAdded  Time elapsed: 0.004 s  <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problem: 
+	The method save(Trip) is undefined for the type TripService
+
+	at com.tripmanager.TripControllerTest.addTrip_userPutsTripInfo_tripIsAdded(TripControllerTest.java:77)
+
+updateTrip_userChoosesTrip_tripIsAdded  Time elapsed: 0.004 s  <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problem: 
+	The method save(Trip) is undefined for the type TripService
+
+	at com.tripmanager.TripControllerTest.updateTrip_userChoosesTrip_tripIsAdded(TripControllerTest.java:86)
+

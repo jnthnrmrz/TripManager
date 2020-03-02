@@ -2,19 +2,95 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
-	<title>My Trip</title>
+	<title>Trip</title>
 	
-	<link href="webjars/bootstrap/4.3.1/css/bootstrap.min.css"
+	<link th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}"
 		    		rel="stylesheet">    	
+	<style> body {background-color:gray}</style>
 </head>
 <body>
-	<div class="d-flex flex-row justify-content-between align-items-center bg-info text-white p-1 mb-2">
-			<h1 th:text="${trip.name}">Trip</h1>
-			<h1>Hi</h1>
+	<div class="d-flex flex-row justify-content-between align-items-center shadow bg-info text-white p-1">
+			<h1>Trip Name</h1>
+			<h1>Week #</h1>
+			<h1>Add Trip</h1>
 	</div>
-
-	<script src="webjars/jquery/3.4.1/jquery.min.js"></script>
-	<script src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>   
+	<div class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner">
+			<div class="container bg-white border rounded-lg mt-1">
+				<div class="row bg-light text-center">
+					<div class="col border">
+						<h4>Monday</h4>
+					</div>
+					<div class="col border">
+						<h4>Tuesday</h4>
+					</div>
+					<div class="col border">
+						<h4>Wednesday</h4>
+					</div>
+					<div class="col border">
+						<h4>Thursday</h4>
+					</div>
+					<div class="col border">
+						<h4>Friday</h4>
+					</div>
+					<div class="col border">
+						<h4>Saturday</h4>
+					</div>
+					<div class="col border">
+						<h4>Sunday</h4>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col border">
+						<p>hello</p>
+					</div>
+					<div class="col border">											
+						<div class="card-deck text-center">
+							<div class="card bg-light mb-2" style="max-width: 18rem;">
+								<div class="card-header pt-1 pb-0">
+									<h1>Cool</h1>
+								</div>
+								<div class= "card-body">
+								</div>
+								<div class="card-footer">
+								</div>
+							</div>
+						</div>	
+					</div>
+					<div class="col border">
+					</div>
+					<div class="col border">
+					</div>
+					<div class="col border">
+					</div>
+					<div class="col border">
+					</div>
+					<div class="col border">
+					</div>
+				</div>
+				<div class="row border">
+					<div class="col border">
+						<p>hello</p>
+					</div>
+					<div class="col border">
+					</div>
+					<div class="col border">
+					</div>
+					<div class="col border">
+					</div>
+					<div class="col border">
+					</div>
+					<div class="col border">
+					</div>
+					<div class="col border">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+<script src="webjars/jquery/3.4.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>   	
 </body>
 </html>
-

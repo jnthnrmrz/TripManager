@@ -17,7 +17,7 @@ public class TripService {
 
 	/**
 	 * All trip information
-	 * @return
+	 * @return An Iterable of type Trip
 	 */
 	public Iterable<Trip> getAllTrips() {
 		return  tripdao.findAll();
@@ -25,8 +25,8 @@ public class TripService {
 
 	/**
 	 * Find a trip by name
-	 * @param name
-	 * @return
+	 * @param name of trip
+	 * @return The whole trip details
 	 */
 	public Trip getTrip(String name) {
 		Trip trip = tripdao.findByName(name);

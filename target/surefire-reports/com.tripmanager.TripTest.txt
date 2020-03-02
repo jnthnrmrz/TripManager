@@ -1,10 +1,11 @@
 -------------------------------------------------------------------------------
 Test set: com.tripmanager.TripTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 3.326 s <<< FAILURE! - in com.tripmanager.TripTest
-getTrip_tripIsSelected  Time elapsed: 0 s  <<< ERROR!
-java.lang.IllegalStateException: Failed to load ApplicationContext
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tripController': Unsatisfied dependency expressed through field 'tripService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tripService' defined in file [C:\Users\batav\eclipse-workspace\TripManager\target\classes\com\tripmanager\service\TripService.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.tripmanager.dao.TripRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tripService' defined in file [C:\Users\batav\eclipse-workspace\TripManager\target\classes\com\tripmanager\service\TripService.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.tripmanager.dao.TripRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.tripmanager.dao.TripRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 3.199 s <<< FAILURE! - in com.tripmanager.TripTest
+getTrip_tripIsSelected  Time elapsed: 0.003 s  <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problem: 
+	Syntax error, insert ";" to complete BlockStatements
+
+	at com.tripmanager.TripTest.getTrip_tripIsSelected(TripTest.java:30)
 

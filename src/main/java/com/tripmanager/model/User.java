@@ -13,22 +13,40 @@ public class User {
 	@GeneratedValue
 	@Column(name="user_id")
 	private int id;
+	@Column(name="role_id")
+	private int roleId = 2; //1 is admin 2 is user
 	@Column(name="username")
-	private String userName;
+	private String username;
 	@Column(name="password")
 	private String password;
 	
+	
+	public User() {
+	}
+	
+	public User(User user) {
+		this.id = user.getId();
+		this.roleId = user.getRoleId();
+		this.username = user.getUsername();
+		this.password = user.getPassword();
+	}
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getUserName() {
-		return userName;
+	public int getRoleId() {
+		return roleId;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setRoleId(int roleId) {
+		this.roleId = roleId;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public String getPassword() {
 		return password;

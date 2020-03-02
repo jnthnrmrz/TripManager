@@ -1,6 +1,12 @@
+C:\Users\batav\eclipse-workspace\TripManager\src\main\java\com\tripmanager\dao\TripDAO.java
+C:\Users\batav\eclipse-workspace\TripManager\src\main\java\com\tripmanager\service\UserService.java
+C:\Users\batav\eclipse-workspace\TripManager\src\main\java\com\tripmanager\model\User.java
+C:\Users\batav\eclipse-workspace\TripManager\src\main\java\com\tripmanager\service\SecurityConfiguration.java
 C:\Users\batav\eclipse-workspace\TripManager\src\main\java\com\tripmanager\service\TripService.java
+C:\Users\batav\eclipse-workspace\TripManager\src\main\java\com\tripmanager\dao\UserRepository.java
 C:\Users\batav\eclipse-workspace\TripManager\src\main\java\com\tripmanager\dao\TripRepository.java
 C:\Users\batav\eclipse-workspace\TripManager\src\main\java\com\tripmanager\model\Trip.java
 C:\Users\batav\eclipse-workspace\TripManager\src\main\java\com\tripmanager\TripController.java
 C:\Users\batav\eclipse-workspace\TripManager\src\main\java\com\tripmanager\TripManagerApplication.java
 C:\Users\batav\eclipse-workspace\TripManager\src\main\java\com\tripmanager\TripNotFoundException.java
+C:\Users\batav\eclipse-workspace\TripManager\src\main\java\com\tripmanager\UserController.java

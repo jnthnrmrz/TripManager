@@ -40,9 +40,15 @@ public class TripController {
 		return "dashboard.html";
 	}
 	
-	@RequestMapping("/login")
-	public String login() {
-		return "login.html";
+	
+	@RequestMapping("/day")
+	public String day() {
+		return "day.html";
+	}
+	
+	@RequestMapping("/trip")
+	public String trip() {
+		return "trip.html";
 	}
 	
 	@PostMapping("/dashboard")
@@ -71,7 +77,7 @@ public class TripController {
 		return "redirect:/dashboard";
 	}
 	
-	@GetMapping("/dashboard/trip{id}")
+	@RequestMapping("/dashboard/trip{id}")
 	public String getTrip(@PathVariable int id, Model model) {
 		Trip trip = tripService.getTrip(id);
 		model.addAttribute("trip", trip);
